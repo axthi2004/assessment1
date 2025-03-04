@@ -21,7 +21,7 @@ class Main {
                     thirdMax = arr[i][j];
                 }
             }
-        }
+    }
 
         System.out.println(thirdMax);
    }
