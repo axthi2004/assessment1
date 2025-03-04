@@ -6,7 +6,6 @@ class repeat {
         for (int i = 0; i < input.length(); i++) {
             char ch = input.charAt(i);
             
-        
             if (Character.isDigit(ch)) {
                 int repeatCount = Character.getNumericValue(ch); 
                 char previousChar = input.charAt(i - 1); 
