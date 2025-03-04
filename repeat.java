@@ -1,23 +1,23 @@
 class repeat {
-  /**
- * @param args
- */
-public static void main(String[] args) {
-      String input = "t6hj7ui";
-      char charToRepeat = input.charAt(0);  
-      int repeatCount1 = Character.getNumericValue(input.charAt(1));  
-      String middleSubstring = input.substring(2, 4);  
-      int repeatCount2 = Character.getNumericValue(input.charAt(4));  
-      String lastPart = input.substring(5);  
-      StringBuilder output = new StringBuilder();
-      for (int i = 0; i < repeatCount1; i++) {
-          output.append(charToRepeat);
-      }
-      for (int i = 0; i < repeatCount2; i++) {
-          output.append(middleSubstring);
-      }
-      output.append(lastPart);
-      System.out.println("Output: " + output.toString());
-  
- }
+    public static void main(String[] args) {
+        String input = "t6hj7ui";
+        StringBuilder output = new StringBuilder();
+        
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+            
+        
+            if (Character.isDigit(ch)) {
+                int repeatCount = Character.getNumericValue(ch); 
+                char previousChar = input.charAt(i - 1); 
+                for (int j = 0; j < repeatCount; j++) {
+                    output.append(previousChar); 
+                }
+            } else {
+                output.append(ch); 
+            }
+        }
+        
+        System.out.println(output.toString());
+    }
 }
